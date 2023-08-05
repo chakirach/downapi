@@ -11,7 +11,8 @@ app = FastAPI()
 
 def channelsearch(channel):
   url = "https://all-media-downloader.p.rapidapi.com/download"
-  payload = { "url": str(channel) }
+  print(channel)
+  payload = { "url": channel }
   headers = {
   	"content-type": "application/x-www-form-urlencoded",
   	"X-RapidAPI-Key": "a3e5a1eba4mshaac9e2bcc2d9949p1eec49jsn6230f553eb03",
