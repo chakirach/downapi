@@ -11,7 +11,7 @@ app = FastAPI()
 
 def channelsearch(channel):
   url = "https://all-media-downloader.p.rapidapi.com/download"
-  payload = { "url": channel }
+  payload = { "url": str(channel) }
   headers = {
   	"content-type": "application/x-www-form-urlencoded",
   	"X-RapidAPI-Key": "a3e5a1eba4mshaac9e2bcc2d9949p1eec49jsn6230f553eb03",
@@ -28,7 +28,7 @@ def read_root():
   
 @app.get("/gotolink2/{item_id}")
 async def gotolink2(item_id: str, q: Union[str, None] = None):
-    link=channelsearch(item_id)
+    link=channelsearch(str(item_id))
     print(link)
     return link
 
