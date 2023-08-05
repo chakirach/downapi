@@ -27,10 +27,10 @@ def channelsearch(channel):
 def read_root():
     return {"Hello": "yes22333"}
   
-@app.get("/gotolink2/{item_id}")
-def gotolink2(item_id: str, q: Union[str, None] = None):
+@app.get("/gotolink2/")
+def gotolink2(link: str):
     url2 = "https://all-media-downloader.p.rapidapi.com/download"
-    payload = { "url": item_id }
+    payload = { "url": link }
     headers = {
     	"content-type": "application/x-www-form-urlencoded",
     	"X-RapidAPI-Key": "a3e5a1eba4mshaac9e2bcc2d9949p1eec49jsn6230f553eb03",
