@@ -25,11 +25,10 @@ def channelsearch(channel):
 
 @app.get("/")
 def read_root():
-    return {"Hello": "yes22"}
+    return {"Hello": "yes22333"}
   
 @app.get("/gotolink2/{item_id}")
 def gotolink2(item_id: str, q: Union[str, None] = None):
-    print(jess_dict2)
     return {item_id}
 
 @app.get("/gotolink3/{item_id}")
