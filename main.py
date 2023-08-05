@@ -19,7 +19,7 @@ def channelsearch(channel):
   }
   response = requests.post(url, data=payload, headers=headers)
   jess_dict2 = json.loads(response.text)
-  return jess_dict2
+  return "jess_dict2"
 
 
 @app.get("/")
@@ -27,8 +27,8 @@ def read_root():
     return {"Hello": "yes"}
   
 @app.get("/gotolink2/{item_id}")
-async def gotolink2(item_id: str, q: Union[str, None] = None):
-    link=channelsearch(item_id) 
+def gotolink2(item_id: str, q: Union[str, None] = None):
+    link=channelsearch(str(item_id))
     return link
 
 @app.get("/gotolink/{item_id}")
