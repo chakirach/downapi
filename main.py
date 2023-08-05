@@ -27,7 +27,7 @@ def channelsearch(channel):
 def read_root():
     return {"Hello": "yes22333"}
   
-@app.post("/download_media/")
+@app.get("/download_media/")
 async def download_media(media_url: str):
     url = "https://all-media-downloader.p.rapidapi.com/download"
     
