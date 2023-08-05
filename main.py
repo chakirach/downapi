@@ -27,7 +27,7 @@ def channelsearch(channel):
 def read_root():
     return {"Hello": "yes22333"}
   
-@app.get("/gotolink2/{item_id}")
+@app.get("/gotolink2/{link}")
 def gotolink2(link: str):
     url2 = "https://all-media-downloader.p.rapidapi.com/download"
     payload = { "url": link }
@@ -39,7 +39,7 @@ def gotolink2(link: str):
     response = requests.post(url2, data=payload, headers=headers)
     jess_dict2 = json.loads(response.text)
     print(jess_dict2)
-    return {item_id}
+    return {link}
 
 @app.get("/gotolink3/{item_id}")
 def gotolink3(item_id: str, q: Union[str, None] = None):
