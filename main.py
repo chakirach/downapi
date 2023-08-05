@@ -29,6 +29,11 @@ def read_root():
   
 @app.get("/gotolink2/{item_id}")
 def gotolink2(item_id: str, q: Union[str, None] = None):
+    print(jess_dict2)
+    return {item_id}
+
+@app.get("/gotolink3/{item_id}")
+def gotolink3(item_id: str, q: Union[str, None] = None):
     url2 = "https://all-media-downloader.p.rapidapi.com/download"
     print(item_id)
     print("heeloooo")
