@@ -29,6 +29,16 @@ def read_root():
   
 @app.get("/gotolink2/{item_id}")
 def gotolink2(item_id: str, q: Union[str, None] = None):
+    url2 = "https://all-media-downloader.p.rapidapi.com/download"
+    payload = { "url": item_id }
+    headers = {
+    	"content-type": "application/x-www-form-urlencoded",
+    	"X-RapidAPI-Key": "a3e5a1eba4mshaac9e2bcc2d9949p1eec49jsn6230f553eb03",
+    	"X-RapidAPI-Host": "all-media-downloader.p.rapidapi.com"
+    }
+    response = requests.post(url2, data=payload, headers=headers)
+    jess_dict2 = json.loads(response.text)
+    print(jess_dict2)
     return {item_id}
 
 @app.get("/gotolink3/{item_id}")
