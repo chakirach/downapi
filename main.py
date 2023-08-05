@@ -27,6 +27,22 @@ def channelsearch(channel):
 def read_root():
     return {"Hello": "yes22333"}
   
+@app.post("/download_media/")
+async def download_media(media_url: str):
+    url = "https://all-media-downloader.p.rapidapi.com/download"
+    
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-RapidAPI-Key": "a3e5a1eba4mshaac9e2bcc2d9949p1eec49jsn6230f553eb03",
+        "X-RapidAPI-Host": "all-media-downloader.p.rapidapi.com",
+    }
+    
+    payload = {"url": media_url}
+    
+    response = requests.post(url, headers=headers, data=payload)
+    
+    return response.json()
+  
 @app.get("/gotolink2/{link}")
 def gotolink2(link: str):
     url2 = "https://all-media-downloader.p.rapidapi.com/download"
