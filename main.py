@@ -25,7 +25,7 @@ def channelsearch(channel):
 
 @app.get("/")
 def read_root():
-    return {"Hello": "yes"}
+    return {"Hello": "yes22"}
   
 @app.get("/gotolink2/{item_id}")
 def gotolink2(item_id: str, q: Union[str, None] = None):
