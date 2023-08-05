@@ -27,7 +27,7 @@ def channelsearch(channel):
 def read_root():
     return {"Hello": "yes22333"}
   
-@app.get("/gotolink2/")
+@app.get("/gotolink2/{item_id}")
 def gotolink2(link: str):
     url2 = "https://all-media-downloader.p.rapidapi.com/download"
     payload = { "url": link }
