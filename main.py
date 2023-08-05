@@ -19,9 +19,7 @@ def channelsearch(channel):
   }
   response = requests.post(url, data=payload, headers=headers)
   jess_dict2 = json.loads(response.text)
-  if jess_dict2['status']==True:
-      return jess_dict2
-  return "false"
+  return jess_dict2
 
 
 @app.get("/")
