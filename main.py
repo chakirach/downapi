@@ -27,7 +27,7 @@ def read_root():
     return {"Hello": "yes"}
   
 @app.get("/gotolink2/{item_id}")
-def gotolink2(item_id: str, q: Union[str, None] = None):
+async def gotolink2(item_id: str, q: Union[str, None] = None):
     link=channelsearch(item_id)
     print(link)
     return link
